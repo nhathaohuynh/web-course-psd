@@ -1,0 +1,89 @@
+.about {
+  padding-top: 9.3rem;
+  padding-bottom: 11rem;
+  background-color: rgb(239, 239, 239);
+  @include blockHeader();
+  &-list {
+    padding-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 3rem;
+  }
+
+  &-item {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.3s all linear;
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      @include bgc($third-color);
+      transition: 0.4s all linear;
+    }
+    &:hover {
+      transform: translate(-1rem, -1rem);
+      &:before {
+        transform: translate(1rem, 1rem);
+      }
+      .about-content {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &-content {
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s all linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($third-color, 0.7)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    gap: 8px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    i {
+      font-size: 24px;
+    }
+    span {
+      @include textClamp();
+    }
+  }
+  &-image {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      padding-top: 4rem;
+      @include touchSlider(80%);
+    }
+    &-item {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.people {
+  padding: 10rem 0  ;
+  background : linear-gradient( to bottom , rgba(white , 0.7) , rgba(white , 0.9)), url(../images/img-people-bg.png) no-repeat center / cover;
+  @include blockHeader();
+  &-list{
+    padding-top: 9.5rem;
+    display : grid ;
+    grid-template-columns: repeat(2, 1fr);
+    gap : 4rem 8rem;
+    grid-template-areas:
+    "h1 h2"
+    "h3 h4";
+  }
+  &-images {
+    border-radius : 50%;
+    @include  size(11.5rem);
+    object-fit : cover ;
+    flex-shrink: 0;
+  }
+  &-info {
+    padding-left : 3rem ;
+  }
+  &-position {
+    display : block;
+    margin-bottom : 2rem ;
+    padding-bottom : 2rem;
+    position : relative ;
+    color : $title-color;
+    &:after {
+      content : '';
+      height : 0.4rem ;
+      width : 7rem ;
+      background-color : $primary-color;
+      position : absolute ;
+      bottom : 0 ;
+      left : 0 ;
+    }
+  }
+  &-name {
+    font-weight : 600;
+    font-size : 15px ;
+    margin-bottom : 1.5rem ;
+    text-transform : uppercase ;
+
+  }
+  &-desc {
+    font-style : normal;
+    color : $text-color;
+    line-height : 1.4;
+    font-weight : 400;
+  }
+  &-item{
+    display : flex;
+    &:first-child{
+      grid-area: h1;
+    }
+    &:nth-child(2){
+      grid-area: h2;
+    }
+    &:nth-child(3){
+      grid-area: h3;
+    }
+    &:last-child{
+      grid-area: h4;
+    }
+  }
+  @include maxWidth(1023px){
+    padding : 7rem 0;
+    &-list{
+      grid-template-columns: 1fr;
+      gap : 4rem 0 ;
+      grid-template-areas:
+      "h1"
+      "h2"
+      "h3"
+      "h4"
+      ;
+    }
+  }
+  @include maxWidth(767px){
+    padding : 5rem 0 ;
+    &-list{
+      padding-top: 5rem;
+    }
+    &-images {
+      @include size(8rem);
+    }
+  }
+}

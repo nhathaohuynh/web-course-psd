@@ -1,0 +1,138 @@
+.story {
+  padding : 10rem 0 ;
+  @include blockHeader("false");
+  &-list {
+    display : flex;
+    gap : 0 3rem ;
+    padding-top : 7rem
+  }
+  &-item{
+    width : calc(33.33% - 1rem) ;
+  }
+  &-media {
+    position : relative ;
+    margin-bottom : 1.5rem;
+  }
+  &-image{
+    height : 24rem;
+    object-fit : cover ;
+  }
+  &-date {
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    flex-direction : column;
+    background-color: $third-color;
+    position : absolute ;
+    bottom : 1.5rem;
+    left : -1.5rem;
+    padding : 1rem 1.5rem;
+
+    &-number{
+      font-weight : bold;
+      color : white;
+      font-size : 3rem;
+      margin-bottom : 0.5rem;
+    }
+    &-text {
+      color : white;
+      font-style : italic;
+    }
+  }
+  &-title{
+    font-weight : 500 ;
+    text-transform : uppercase ;
+    margin-bottom : 1.5rem;
+    color : $title-color
+
+  }
+  &-desc {
+    line-height : 1.4;
+    color : $text-color;
+    padding-bottom : 1.5rem;
+  }
+  &-meta {
+    padding-top : 1.5rem ;
+    border-top : 1px solid rgba(0, 0, 0, 0.1);
+    display : flex ;
+    gap : 2rem;
+    i {
+      font-size : 16px;
+    }
+    &-item{
+      display : flex;
+      gap : 0.5rem;
+      color : $third-color;
+    }
+    &-numbers{
+      color : $text-color;;
+      font-style : italic ;
+      font-family: $secondary-font;
+    }
+  }
+  @include maxWidth(1023px){
+    padding : 5rem 0 ;
+    &-list {
+      padding-top : 4rem;
+    }
+    &-image{
+      height : 14px;
+    }
+    &-date {
+      padding :0.8rem 1.2rem ;
+    }
+    &-ttile{
+      font-size : 1.2rem ;
+    }
+    &-desc {
+      font-size : 1.3rem ;
+      line-height : 1.4rem;
+      &-inner{
+        @include textClamp(4);
+      }
+    }
+  }
+  @include maxWidth(767px){
+    &-list {
+      display : block;
+    }
+    &-item {
+      width : 100% ;
+      &:not(:last-child){
+        margin-bottom : 5rem;
+      }
+    }
+    &-date{
+      left : -5px;
+      bottom : 5px;
+    }
+  }
+}
+.map {
+  margin-top : 10rem;
+  padding : 5rem 0 ;
+  display : flex ;
+  justify-content: center;
+  align-items : center;
+  background: linear-gradient(to bottom , rgba(white , 0.5) , rgba(white , 0.8)), url(../images/img-map.png) no-repeat center  / cover ;
+  flex-direction : column ;
+  gap : 0.5rem 0 ;
+  &-heading{
+    font-size : 2.4rem ;
+    font-weight : bold ;
+    color : $primary-color;
+    padding : 2rem 0 ;
+    position : relative ;
+    &:after{
+      content :"";
+      width : 7rem ;
+      background : $primary-color ;
+      height  : 0.4rem;
+      transform : translateX(-50%);
+      position : absolute ;
+      bottom : 0 ;
+      left : 50% ;
+
+    }
+  }
+}

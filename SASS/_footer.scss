@@ -1,0 +1,158 @@
+.footer {
+  padding : 10rem 0 5rem 0 ;
+  &-bottom {
+    text-align : center;
+  }
+  &-top {
+    display : flex;
+    align-items : stretch;
+    justify-content:  space-between;
+    text-transform : uppercase ;
+    &-logo{
+      width : calc(40% - 25px);
+      font-weight : bold ;
+      color : $text-color ;
+      display : inline-block;
+      font-size : 4.6rem;
+    }
+    &-blog {
+       width : calc(35% - 25px);
+       transform : translateY(7%);
+    }
+    &-instagram {
+       width : calc(25% - 25px);
+       transform : translateY(7%);
+    }
+  }
+  &-body {
+    display : flex;
+    align-items : stretch;
+    justify-content:  space-between;
+    margin-bottom : 5rem;
+    &-logo{
+      width : calc(40% - 25px);
+    }
+    &-follow{
+      strong {
+        font-size : 1.8rem ;
+        font-weight : bold;
+      }
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    &-text{
+      font-style: normal;
+      margin-top : 3rem ;
+      margin-bottom  : 3rem ;
+    }
+    &-social {
+      display : flex ;
+      align-items : center;
+      margin-bottom: 3.5rem;
+    }
+    &-link{
+      font-size : 2rem ;
+      margin-left : 1.5rem;
+      color :$third-color;
+    }
+    &-form{
+      width : 100% ;
+      max-width : 38rem;
+      display : flex;
+      input{
+        padding : 1.5rem;
+        background-color: #fff;
+        border : 1px solid rgba(0, 0, 0, 0.2);
+        border-right : 0 ;
+        outline : none ;
+        font-family: $secondary-font;
+        font-style : italic;
+        font-size : 1.5rem;
+      }
+    }
+    &-button {
+      color : white ;
+      text-transform: uppercase;
+      background-color: $third-color;
+      border : none;
+      outline : none;
+      padding : 1.5rem 3.5rem;
+      font-weight : bold;
+    }
+    &-images{
+      display : flex;
+      flex-wrap : wrap;
+      gap : 0.5rem 0.5rem;
+      margin-bottom : 3.5rem;
+      img {
+        width : calc(33.33% - 1rem);
+      }
+    }
+    &-blog {
+      width : calc(35% - 25px);
+
+    }
+    &-title {
+      text-transform: uppercase;
+      line-height : 1.4rem;
+      font-weight : 600;
+      margin-bottom : 1rem;
+      font-size : 1.2rem;
+    }
+    &-item {
+      display : flex;
+      align-items : center;
+      margin-bottom : 3rem;
+      img {
+         @include size(12rem,8rem);
+         object-fit : cover ;
+         flex-shrink : 0;
+         padding-right : 2rem;
+      }
+    }
+    &-instagram{
+      width : calc(25% - 25px);
+    }
+  }
+  &-span {
+    color : $primary-color ;
+  }
+  @include maxWidth (1023px){
+    padding-top : 5px;
+    &-top-logo{
+      width : calc(60% - 25px);
+    }
+    &-top-blog{
+      width : calc(40% - 25px);
+    }
+    &-body-logo{
+      width : calc(60% - 25px);
+    }
+    &-body-blog{
+      width : calc(40% - 25px);
+    }
+    &-top-instagram {
+      display : none;
+       width : 0 ;
+    }
+    &-body-instagram {
+      display : none;
+    }
+  }
+  @include maxWidth(767px){
+    &-top-blog {
+      display : none;
+       width : 0 ;
+    }
+    &-body-blog {
+      display : none;
+    }
+    &-top-logo{
+      width : 100%;
+    }
+    &-body-logo{
+      width : 100%;
+    }
+  }
+}

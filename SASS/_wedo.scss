@@ -1,0 +1,111 @@
+.wedo {
+  padding: 10rem 0;
+
+  @include blockHeader();
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    cursor: pointer;
+    &-header {
+      display: flex;
+      padding: 1.5rem;
+      border: 1px solid $gray-dark-color;
+      align-items: center;
+      justify-content: space-between;
+
+      img {
+        margin-right: 1.5rem;
+      }
+      i {
+        margin-left: auto;
+        font-size: 3rem;
+        color: $gray-dark-color;
+        transition: 0.2s all linear;
+      }
+      .arrow-down {
+        display: none;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-weight: 600;
+      }
+    }
+  }
+  &-item.is_active &-desc {
+    display: block;
+    opacity: 1;
+  }
+  &-item.is_active &-item-header {
+    .arrow-down {
+      display: block;
+    }
+    .arrow-up {
+      display: none;
+    }
+  }
+
+  &-desc {
+    padding: 2rem;
+    border: 1px solid $gray-dark-color;
+    border-top: none;
+    font-family: $secondary-font;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    color: $text-color;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: 0.3s all linear;
+    display: none;
+  }
+
+  &-text {
+    height: 13rem !important ;
+    overflow-y: auto;
+    padding-right: 2rem;
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $gray-light-color;
+      border-radius: 2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $third-color;
+      border-radius: 2rem;
+    }
+  }
+  @include minWidth(1024px) {
+    &-wapper {
+      padding-top: 7rem;
+      display: flex;
+      gap: 3rem;
+    }
+    &-img {
+      object-fit: cover;
+      width: 100%;
+      height: 380px;
+    }
+    &-content {
+      width: 100%;
+    }
+  }
+  @include maxWidth(1024px) {
+    &-img {
+      margin: 3rem auto;
+      width: 100%;
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    &-img {
+      margin: 3rem 0;
+    }
+  }
+}

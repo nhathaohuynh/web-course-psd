@@ -1,0 +1,62 @@
+.number {
+  @include bgc($third-color);
+  &-list {
+    display: flex;
+    align-items: stretch;
+  }
+  &-item {
+    padding: 8.5rem 3rem;
+    text-align: center;
+    color: $gray-light-color;
+    border-left: 1px solid $gray-light-color;
+    text-transform: uppercase;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:last-child {
+      border-right: 1px solid $gray-light-color;
+    }
+    &-count {
+      font-weight: bold;
+      font-size: 7.2rem;
+      margin-bottom: 1rem;
+    }
+    &-text {
+      @include textClamp(3);
+    }
+  }
+  @include maxWidth(1023px) {
+    &-item {
+      padding: 4rem 1.5rem;
+      &-count {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+      }
+      &-text {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      display: block;
+    }
+    &-item {
+      margin: 0 auto;
+      text-align: center;
+      padding: 3rem 3rem;
+      width: 90%;
+      border: none;
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-light-color;
+      }
+      &-text {
+        @include textClamp(1);
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}

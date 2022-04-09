@@ -1,0 +1,86 @@
+.quote {
+  padding: 6.5rem 0;
+  background-color: $gray-color;
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-arrow {
+    font-size: 3rem;
+    color: $gray-dark-color;
+    cursor: pointer;
+    padding: 2rem;
+  }
+  &-comment {
+    margin: 0 5.5rem;
+    display: flex;
+  }
+  &-img {
+    @include size(15rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid $third-color;
+    flex-shrink: 0;
+  }
+  &-info {
+    margin-left: 6rem;
+  }
+  &-desc {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: $secondary-font;
+    font-style: italic;
+    margin-bottom: 3rem;
+    color: $text-color;
+    @include textClamp(3);
+  }
+  &-author {
+    font-size: 2.4rem;
+    color: $text-color;
+    font-family: $third-font;
+    padding-left: 7rem;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 4px;
+      width: 6rem;
+
+      background-color: $primary-color;
+    }
+  }
+  @include maxWidth(767px) {
+    &-arrow.quote-arrow-left,
+    &-arrow.quote-arrow-right {
+      display: none;
+    }
+    &-comment {
+      margin: 0;
+      flex-direction: column;
+    }
+    &-img {
+      @include size(10rem);
+      margin: 0 auto;
+      img {
+        max-width: 50%;
+      }
+      margin-bottom: 2rem;
+    }
+    &-info {
+      margin-left: 0rem;
+    }
+    &-desc {
+      font-size: 1.8rem;
+      line-height: 1.4;
+      display: block;
+    }
+    &-author {
+      font-size: 2rem;
+    }
+  }
+}

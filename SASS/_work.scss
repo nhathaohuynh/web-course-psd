@@ -1,0 +1,86 @@
+.work {
+  padding-top : 10rem;
+  padding-bottom : 10rem;
+  @include blockHeader();
+  &-list {
+    padding-top : 7rem;
+    display : grid ;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 39rem;
+    grid-template-areas:
+    "h1 h3 h5 h6"
+    "h2 h4 h5 h7";
+    height : 78rem;
+  }
+  &-item {
+    height : 100% !important;
+  }
+  &-image{
+    height : 100%;
+    object-fit : cover;
+  }
+  &-icon {
+    @include size(3rem);
+    margin-bottom : 1.5rem;
+  }
+  &-title {
+    text-transform: uppercase;
+    margin-bottom : 1.5rem;
+    font-weight : 400;
+    font-size : 15px;
+    @include textClamp(2);
+  }
+  &-desc {
+    color : white;
+  }
+  &-content{
+    flex-direction: column;
+    color : white ;
+    text-align : center;
+    padding : 1.5rem;
+  }
+  &-item:first-child{
+    grid-area : h1 ;
+  }
+  &-item:nth-child(2){
+    grid-area : h2 ;
+  }
+  &-item:nth-child(3){
+    grid-area : h3 ;
+  }
+  &-item:nth-child(4){
+    grid-area : h4 ;
+  }
+  &-item:nth-child(5){
+    grid-area : h5 ;
+  }
+  &-item:nth-child(6){
+    grid-area : h6 ;
+  }
+  &-item:last-child{
+    grid-area : h7 ;
+  }
+  @include maxWidth(1024px){
+    padding-top : 5rem;
+    &-list{
+      padding-top : 3rem;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-areas:
+      "h1 h3"
+      "h2 h4"
+      "h5 h6"
+      "h5 h7";
+      height : auto ;
+    }
+    &-content{
+      padding : 1rem;
+    }
+  }
+  @include maxWidth(568px){
+    &-list {
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+}
+@include hoverEfect(".work-item", ".work-content", "false");
+

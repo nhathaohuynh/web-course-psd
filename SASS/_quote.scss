@@ -1,20 +1,35 @@
 .quote {
   padding: 6.5rem 0;
   background-color: $gray-color;
+
   &-content {
-    display: flex;
     align-items: center;
     justify-content: space-between;
+
   }
-  &-arrow {
+  .slick-arrow {
     font-size: 3rem;
     color: $gray-dark-color;
     cursor: pointer;
     padding: 2rem;
+    background-color:transparent;
+    border : none ;
+    outline : none;
+    position : absolute ;
+    top : 50% ;
+    left : 0 ;
+    transform : translateY(-50%);
+  }
+  .slick-next{
+    left : unset;
+    right : 0 ;
   }
   &-comment {
     margin: 0 5.5rem;
     display: flex;
+    position: relative;
+    z-index: 10;
+    height : 0 ;
   }
   &-img {
     @include size(15rem);
@@ -23,6 +38,10 @@
     align-items: center;
     border: 3px solid $third-color;
     flex-shrink: 0;
+  }
+  &-img2{
+    border : none;
+    border-radius : 50% ;
   }
   &-info {
     margin-left: 6rem;
@@ -83,4 +102,10 @@
       font-size: 2rem;
     }
   }
+}
+.slick-initialized .slick-slide {
+  display : flex !important;
+}
+.slick-slide{
+  height : unset !important;
 }

@@ -783,19 +783,32 @@ body::-webkit-scrollbar-thumb {
   background-color: #f8f8f8;
 }
 .quote-content {
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.quote-arrow {
+.quote .slick-arrow {
   font-size: 3rem;
   color: #cccccc;
   cursor: pointer;
   padding: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.quote .slick-next {
+  left: unset;
+  right: 0;
 }
 .quote-comment {
   margin: 0 5.5rem;
   display: flex;
+  position: relative;
+  z-index: 10;
+  height: 0;
 }
 .quote-img {
   width: 15rem;
@@ -805,6 +818,10 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   border: 3px solid #95e1d3;
   flex-shrink: 0;
+}
+.quote-img2 {
+  border: none;
+  border-radius: 50%;
 }
 .quote-info {
   margin-left: 6rem;
@@ -870,6 +887,14 @@ body::-webkit-scrollbar-thumb {
   .quote-author {
     font-size: 2rem;
   }
+}
+
+.slick-initialized .slick-slide {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: unset !important;
 }
 
 .team {
